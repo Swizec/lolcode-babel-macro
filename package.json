@@ -1,0 +1,36 @@
+{
+    "name": "lolcode-babel-macro",
+    "version": "1.0.0",
+    "description": "LOLCODE implementation with babel macros",
+    "main": "dist/lolcode-babel-macro.js",
+    "files": ["dist/"],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write",
+        "prepare": "npm run build",
+        "build": "microbundle -i src/index.js -o dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Swizec/lolcode-babel-macro.git"
+    },
+    "keywords": [
+        "lolcode",
+        "babel",
+        "babel-macros",
+        "javascript"
+    ],
+    "author": "Swizec Teller",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Swizec/lolcode-babel-macro/issues"
+    },
+    "homepage": "https://github.com/Swizec/lolcode-babel-macro#readme",
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-preset-env": "^1.7.0",
+        "husky": "^2.1.0",
+        "microbundle": "^0.11.0",
+        "prettier": "^1.17.0"
+    }
+}
