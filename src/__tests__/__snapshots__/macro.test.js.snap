@@ -1,26 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`macros basic usage: basic usage 1`] = `
+exports[`macros hello world: hello world 1`] = `
 "
-import wcImport from \\"../macro\\";
-const asyncModule = wcImport(\\"./MyComponent\\");
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI 1.2
+    VISIBLE \\"HAI WORLD!\\"
+    KTHXBYE
+\`;
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const asyncModule = import(
-  /* webpackChunkName: MyComponent */
-  \\"./MyComponent\\"
-);
-
-"
-`;
-
-exports[`macros no usage: no usage 1`] = `
-"
-import wcImport from \\"../macro\\";
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
+const code = function() {
+  console.log(\\"HAI WORLD!\\");
+};
 
 "
 `;

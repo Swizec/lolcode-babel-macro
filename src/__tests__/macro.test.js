@@ -13,10 +13,16 @@ pluginTester({
         return prettier.format(result, { trailingComma: "es5" });
     },
     tests: {
-        "no usage": `import wcImport from "../macro";`,
-        "basic usage": `
-      import wcImport from "../macro";
-      const asyncModule = wcImport("./MyComponent");
-    `
+        "hello world": {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI 1.2
+                    VISIBLE "HAI WORLD!"
+                    KTHXBYE
+                \`;
+            `
+        }
     }
 });
