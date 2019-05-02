@@ -18,9 +18,38 @@ function compileLolcode(referencePath) {
         .join("");
 
     const ast = parser.parse(source);
-    console.log(ast);
+    const jsify = new JSify();
 
     return `function () {
-        
+       ${jsify.compile(ast)} 
     }`;
+}
+
+class JSify {
+    Body = node => {
+        node.lines = node.lines.map(node => this.compile(node));
+        return node.lines.join("\n");
+    };
+
+    Visible = node => {
+        return `console.log(${this.compile(node.expression)})`;
+    };
+
+    Literal = node => {
+        if (typeof node.value === "string") {
+            return `"${node.value}"`;
+        } else {
+            return node.value;
+        }
+    };
+
+    compile = node => {
+        if (this[node._name]) {
+            node = this[node._name](node);
+        } else {
+            throw new Error(`Not implemented: ${node._name}`);
+        }
+
+        return node;
+    };
 }

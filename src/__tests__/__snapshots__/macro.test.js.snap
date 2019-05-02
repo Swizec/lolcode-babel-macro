@@ -4,7 +4,7 @@ exports[`macros hello world: hello world 1`] = `
 "
 import { lolcode } from '../macro';
 const code = lolcode\`
-    HAI 1.2
+    HAI
     VISIBLE \\"HAI WORLD!\\"
     KTHXBYE
 \`;

@@ -10,7 +10,9 @@ pluginTester({
         filename: __filename
     },
     formatResult(result) {
-        return prettier.format(result, { trailingComma: "es5" });
+        return prettier.format(result, {
+            trailingComma: "es5"
+        });
     },
     tests: {
         "hello world": {
@@ -18,7 +20,7 @@ pluginTester({
             code: `
                 import { lolcode } from '../macro';
                 const code = lolcode\`
-                    HAI 1.2
+                    HAI
                     VISIBLE "HAI WORLD!"
                     KTHXBYE
                 \`;
