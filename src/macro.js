@@ -1,5 +1,6 @@
 const { createMacro } = require("babel-plugin-macros");
-const compiler = require("./compiler");
+// const compiler = require("./compiler");
+const { parser } = require("@swizec/loljs");
 
 module.exports = createMacro(myMacro);
 
@@ -16,7 +17,10 @@ function compileLolcode(referencePath) {
         .map(node => node.value.raw)
         .join("");
 
+    const ast = parser.parse(source);
+    console.log(ast);
+
     return `function () {
-        ${compiler(source).join("")}
+        
     }`;
 }
