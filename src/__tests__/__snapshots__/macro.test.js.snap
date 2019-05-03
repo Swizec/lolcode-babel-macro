@@ -1,18 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`macros hello world: hello world 1`] = `
+exports[`macros functioncall: functioncall 1`] = `
 "
 import { lolcode } from '../macro';
 const code = lolcode\`
     HAI
-    VISIBLE \\"HAI WORLD!\\"
+    HOW DUZ I IZCOLOR YR COLOR
+        VISIBLE COLOR
+    IF U SAY SO
+    IZCOLOR \\"yellow\\" MKAY
     KTHXBYE
 \`;
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
 const code = function() {
-  console.log(\\"HAI WORLD!\\");
+  function IZCOLOR(color) {
+    console.log(color);
+  }
+
+  IZCOLOR(\\"yellow\\");
 };
 
 "

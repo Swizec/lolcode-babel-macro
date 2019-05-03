@@ -25,6 +25,170 @@ pluginTester({
                     KTHXBYE
                 \`;
             `
+        },
+        assignment: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    I HAS A VAR
+                    VAR R 3
+                    KTHXBYE
+                \`;
+            `
+        },
+        declaration: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    I HAS A VAR
+                    KTHXBYE
+                \`;
+            `
+        },
+        functioncall: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    HOW DUZ I IZCOLOR YR COLOR
+                        VISIBLE COLOR
+                    IF U SAY SO
+                    IZCOLOR "yellow" MKAY
+                    KTHXBYE
+                \`;
+            `
+        },
+        "functiondefinition with args": {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    HOW DUZ I IZCOLOR YR COLOR
+                        VISIBLE color
+                    IF U SAY SO
+                    KTHXBYE
+                \`;
+            `
+        },
+        "functiondefinition with return": {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    HOW DUZ I IZCOLOR YR COLOR
+                        FOUND YR color
+                    IF U SAY SO
+                    KTHXBYE
+                \`;
+            `
+        },
+        functiondefinition: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                     HOW DUZ I IZYELLOW
+                        VISIBLE "yellow"
+                    IF U SAY SO
+                    KTHXBYE
+                \`;
+            `
+        },
+        gimmeh: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    
+                    KTHXBYE
+                \`;
+            `
+        },
+        if: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    
+                    KTHXBYE
+                \`;
+            `
+        },
+        indexer: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    
+                    KTHXBYE
+                \`;
+            `
+        },
+        loop: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    
+                    KTHXBYE
+                \`;
+            `
+        },
+        loopcondition: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    
+                    KTHXBYE
+                \`;
+            `
+        },
+        noop: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    
+                    KTHXBYE
+                \`;
+            `
+        },
+        return: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    
+                    KTHXBYE
+                \`;
+            `
+        },
+        switch: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    
+                    KTHXBYE
+                \`;
+            `
         }
     }
 });
