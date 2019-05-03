@@ -119,7 +119,12 @@ pluginTester({
                 import { lolcode } from '../macro';
                 const code = lolcode\`
                     HAI
-                    
+                    WIN, O RLY?
+                        YA RLY
+                            VISIBLE WIN
+                        NO WAI
+                            VISIBLE FAIL
+                    OIC
                     KTHXBYE
                 \`;
             `

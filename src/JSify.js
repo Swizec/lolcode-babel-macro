@@ -34,6 +34,14 @@ class JSify {
         return node.name.toLowerCase();
     };
 
+    If = node => {
+        return `if (${name.condition}) {
+            ${this.compile(node.body)}
+        }else{
+            ${this.compile(node.elseBody)}
+        }`;
+    };
+
     Visible = node => {
         return `console.log(${this.compile(node.expression)})`;
     };
