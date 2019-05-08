@@ -213,6 +213,10 @@ pluginTester({
                 const code = lolcode\`
                     HAI
                         I HAS A thing ITS 10
+                        I HAS A aval ITS true
+                        I HAS A bval ITS false
+                        thing R NOT 10
+                        thing R BOTH SAEM aval AN bval
                     KTHXBYE
                 \`;
             `

@@ -1,3 +1,5 @@
+const stdlib = require("./lolstdlib");
+
 class JSify {
     Assignment = node => {
         return `${node.name} = ${this.compile(node.value)}`;
@@ -23,7 +25,11 @@ class JSify {
     };
 
     FunctionCall = node => {
-        return `${node.name}(${this.compile(node.args)})`;
+        if (stdlib[node.name]) {
+            return `lolstdlib["${node.name}"](${this.compile(node.args)})`;
+        } else {
+            return `${node.name}(${this.compile(node.args)})`;
+        }
     };
 
     FunctionDefinition = node => {

@@ -1,12 +1,15 @@
 const { createMacro } = require("babel-plugin-macros");
 const { parser } = require("@swizec/loljs");
 const JSify = require("./JSify");
+const lolstdlib = require("./lolstdlib");
 
 module.exports = createMacro(myMacro);
+module.exports.lolstdlib = lolstdlib;
 
 function myMacro({ references, state, babel }) {
     references.lolcode.forEach(referencePath => {
         const compiled = compileLolcode(referencePath);
+
         console.log(compiled);
         referencePath.parentPath.replaceWithSourceString(compiled);
     });
