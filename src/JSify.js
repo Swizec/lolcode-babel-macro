@@ -100,13 +100,16 @@ class JSify {
         const body = this.compile(node.body);
 
         const incordec = op.command == "inc" ? "++" : "--";
-        const loopsymbol = `typeof ${op.symbol} === 'undefined' ? let ${
+        const loopsymbol = `let _${op.symbol} = typeof ${
             op.symbol
-        } = 0 : ${op.symbol}`;
+        } === 'undefined' ?  0 : ${op.symbol}`;
 
-        return `for (${loopsymbol}; ${cond}; ${op.symbol}${incordec}) {
+        return `for (${loopsymbol}; ${cond}; _${op.symbol}${incordec}) {
+            if (typeof ${op.symbol} !== 'undefined') {
+                ${op.symbol} = _${op.symbol};
+            }
             ${body};
-        }`;
+        };`;
     };
 
     LoopCondition = node => {

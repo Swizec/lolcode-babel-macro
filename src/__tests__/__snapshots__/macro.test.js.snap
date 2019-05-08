@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`macros loop: loop 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    I HAS A i ITS 0
+    IM IN YR loopy UPPIN YR i TIL BOTH SAEM i AN 10
+        VISIBLE SUM OF i AN 1
+    IM OUTTA YR loopy
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+  let i = 0;
+
+  for (
+    let _i = typeof i === \\"undefined\\" ? 0 : i;
+    !lolstdlib[\\"BOTH SAEM\\"](i, 10);
+    _i++
+  ) {
+    let IT;
+    console.log(lolstdlib[\\"SUM OF\\"](i, 1));
+
+    if (typeof i !== \\"undefined\\") {
+      i = _i;
+    }
+  }
+};
+
+"
+`;
+
 exports[`macros loopcondition: loopcondition 1`] = `
 "
 import { lolcode } from '../macro';
