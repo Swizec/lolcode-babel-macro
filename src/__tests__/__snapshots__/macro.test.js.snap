@@ -20,6 +20,42 @@ const code = function() {
 "
 `;
 
+exports[`macros builtins: builtins 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+        I HAS A thing ITS 10
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let thing = 10;
+};
+
+"
+`;
+
+exports[`macros declaration with value: declaration with value 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    I HAS A VAR ITS 10
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let VAR = 10;
+};
+
+"
+`;
+
 exports[`macros declaration: declaration 1`] = `
 "
 import { lolcode } from '../macro';

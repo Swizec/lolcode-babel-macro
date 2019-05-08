@@ -49,6 +49,17 @@ pluginTester({
                 \`;
             `
         },
+        "declaration with value": {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    I HAS A VAR ITS 10
+                    KTHXBYE
+                \`;
+            `
+        },
         functioncall: {
             error: false,
             code: `
@@ -191,6 +202,17 @@ pluginTester({
                 const code = lolcode\`
                     HAI
                     
+                    KTHXBYE
+                \`;
+            `
+        },
+        builtins: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                        I HAS A thing ITS 10
                     KTHXBYE
                 \`;
             `

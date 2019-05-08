@@ -13,7 +13,13 @@ class JSify {
     };
 
     Declaration = node => {
-        return `let ${node.name} = null;`;
+        let value = "null";
+
+        if (node.value !== null) {
+            value = this.compile(node.value);
+        }
+
+        return `let ${node.name} = ${value};`;
     };
 
     FunctionCall = node => {
