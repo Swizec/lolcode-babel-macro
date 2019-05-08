@@ -78,6 +78,10 @@ class JSify {
         return code;
     };
 
+    Gimmeh = node => {
+        return `${node.variable} = window.prompt()`;
+    };
+
     Visible = node => {
         return `console.log(${this.compile(node.expression)})`;
     };

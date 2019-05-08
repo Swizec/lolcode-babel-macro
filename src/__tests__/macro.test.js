@@ -119,7 +119,8 @@ pluginTester({
                 import { lolcode } from '../macro';
                 const code = lolcode\`
                     HAI
-                    
+                    I HAS A val
+                    GIMMEH val
                     KTHXBYE
                 \`;
             `
