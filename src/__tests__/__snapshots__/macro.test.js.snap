@@ -1,5 +1,305 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`macros assignment: assignment 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    I HAS A VAR
+    VAR R 3
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+  let VAR = null;
+  VAR = 3;
+};
+
+"
+`;
+
+exports[`macros builtins: builtins 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+        I HAS A thing ITS 10
+        I HAS A aval ITS true
+        I HAS A bval ITS false
+        thing R NOT 10
+        thing R BOTH SAEM aval AN bval
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+  let thing = 10;
+  let aval = true;
+  let bval = false;
+  thing = lolstdlib[\\"NOT\\"](10);
+  thing = lolstdlib[\\"BOTH SAEM\\"](aval, bval);
+};
+
+"
+`;
+
+exports[`macros declaration with value: declaration with value 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    I HAS A VAR ITS 10
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+  let VAR = 10;
+};
+
+"
+`;
+
+exports[`macros declaration: declaration 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    I HAS A VAR
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+  let VAR = null;
+};
+
+"
+`;
+
+exports[`macros elseif: elseif 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    IT R BOTH SAEM 1 AN 2 
+    O RLY?
+        YA RLY
+            VISIBLE WIN
+        MEBBE BOTH SAEM IT AN false
+            VISIBLE \\"MEBBE\\"
+        NO WAI
+            VISIBLE FAIL
+    OIC
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+  IT = lolstdlib[\\"BOTH SAEM\\"](1, 2);
+
+  if (IT) {
+    let IT;
+    console.log(true);
+  } else if (lolstdlib[\\"BOTH SAEM\\"](it, false)) {
+    let IT;
+    console.log(\\"MEBBE\\");
+  } else {
+    let IT;
+    console.log(false);
+  }
+};
+
+"
+`;
+
+exports[`macros functioncall: functioncall 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    HOW DUZ I IZCOLOR YR COLOR
+        VISIBLE COLOR
+    IF U SAY SO
+    IZCOLOR \\"yellow\\" MKAY
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+
+  function IZCOLOR(color) {
+    let IT;
+    console.log(color);
+  }
+
+  IZCOLOR(\\"yellow\\");
+};
+
+"
+`;
+
+exports[`macros functiondefinition with args: functiondefinition with args 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    HOW DUZ I IZCOLOR YR COLOR
+        VISIBLE color
+    IF U SAY SO
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+
+  function IZCOLOR(color) {
+    let IT;
+    console.log(color);
+  }
+};
+
+"
+`;
+
+exports[`macros functiondefinition with return: functiondefinition with return 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    HOW DUZ I IZCOLOR YR COLOR
+        FOUND YR color
+    IF U SAY SO
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+
+  function IZCOLOR(color) {
+    let IT;
+    return color;
+  }
+};
+
+"
+`;
+
+exports[`macros functiondefinition: functiondefinition 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+     HOW DUZ I IZYELLOW
+        VISIBLE \\"yellow\\"
+    IF U SAY SO
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+
+  function IZYELLOW() {
+    let IT;
+    console.log(\\"yellow\\");
+  }
+};
+
+"
+`;
+
+exports[`macros gimmeh: gimmeh 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    I HAS A val
+    GIMMEH val
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+  let val = null;
+  val = window.prompt();
+};
+
+"
+`;
+
+exports[`macros hello world: hello world 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    VISIBLE \\"HAI WORLD!\\"
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+  console.log(\\"HAI WORLD!\\");
+};
+
+"
+`;
+
+exports[`macros if: if 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    IT R BOTH SAEM 1 AN 2 
+    O RLY?
+        YA RLY
+            VISIBLE WIN
+        NO WAI
+            VISIBLE FAIL
+    OIC
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+  IT = lolstdlib[\\"BOTH SAEM\\"](1, 2);
+
+  if (IT) {
+    let IT;
+    console.log(true);
+  } else {
+    let IT;
+    console.log(false);
+  }
+};
+
+"
+`;
+
 exports[`macros loop: loop 1`] = `
 "
 import { lolcode } from '../macro';
@@ -18,17 +318,9 @@ const code = function() {
   let IT;
   let i = 0;
 
-  for (
-    let _i = typeof i === \\"undefined\\" ? 0 : i;
-    !lolstdlib[\\"BOTH SAEM\\"](i, 10);
-    _i++
-  ) {
+  for (; !lolstdlib[\\"BOTH SAEM\\"](i, 10); _i++) {
     let IT;
     console.log(lolstdlib[\\"SUM OF\\"](i, 1));
-
-    if (typeof i !== \\"undefined\\") {
-      i = _i;
-    }
   }
 };
 
@@ -36,6 +328,60 @@ const code = function() {
 `;
 
 exports[`macros loopcondition: loopcondition 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+};
+
+"
+`;
+
+exports[`macros noop: noop 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+};
+
+"
+`;
+
+exports[`macros return: return 1`] = `
+"
+import { lolcode } from '../macro';
+const code = lolcode\`
+    HAI
+    
+    KTHXBYE
+\`;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const code = function() {
+  let IT;
+};
+
+"
+`;
+
+exports[`macros switch: switch 1`] = `
 "
 import { lolcode } from '../macro';
 const code = lolcode\`
