@@ -161,24 +161,16 @@ pluginTester({
                 \`;
             `
         },
-        indexer: {
-            error: false,
-            code: `
-                import { lolcode } from '../macro';
-                const code = lolcode\`
-                    HAI
-                    
-                    KTHXBYE
-                \`;
-            `
-        },
         loop: {
             error: false,
             code: `
                 import { lolcode } from '../macro';
                 const code = lolcode\`
                     HAI
-                    
+                    I HAS A i ITS 0
+                    IM IN YR loopy UPPIN YR i TIL BOTH SAEM i AN 10
+                        VISIBLE SUM OF i AN 1
+                    IM OUTTA YR loopy
                     KTHXBYE
                 \`;
             `

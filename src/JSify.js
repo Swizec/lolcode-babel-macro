@@ -94,6 +94,30 @@ class JSify {
         }
     };
 
+    Loop = node => {
+        const cond = this.compile(node.condition);
+        const op = node.op;
+        const body = this.compile(node.body);
+
+        const incordec = op.command == "inc" ? "++" : "--";
+        const loopsymbol = `typeof ${op.symbol} === 'undefined' ? let ${
+            op.symbol
+        } = 0 : ${op.symbol}`;
+
+        return `for (${loopsymbol}; ${cond}; ${op.symbol}${incordec}) {
+            ${body};
+        }`;
+    };
+
+    LoopCondition = node => {
+        if (!node) {
+            return "true";
+        } else {
+            const expr = this.compile(node.expression);
+            return node.check === "while" ? expr : `!${expr}`;
+        }
+    };
+
     compile = node => {
         if (this[node._name]) {
             node = this[node._name](node);
