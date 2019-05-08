@@ -1,26 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`macros builtins: builtins 1`] = `
+exports[`macros if: if 1`] = `
 "
 import { lolcode } from '../macro';
 const code = lolcode\`
     HAI
-        I HAS A thing ITS 10
-        I HAS A aval ITS true
-        I HAS A bval ITS false
-        thing R NOT 10
-        thing R BOTH SAEM aval AN bval
+    IT R BOTH SAEM 1 AN 2 
+    O RLY?
+        YA RLY
+            VISIBLE WIN
+        NO WAI
+            VISIBLE FAIL
+    OIC
     KTHXBYE
 \`;
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
 const code = function() {
-  let thing = 10;
-  let aval = true;
-  let bval = false;
-  thing = lolstdlib[\\"NOT\\"](10);
-  thing = lolstdlib[\\"BOTH SAEM\\"](aval, bval);
+  let IT = null;
+  IT = lolstdlib[\\"BOTH SAEM\\"](1, 2);
+
+  if (IT) {
+    let IT = null;
+    console.log(true);
+  } else {
+    let IT = null;
+    console.log(false);
+  }
 };
 
 "

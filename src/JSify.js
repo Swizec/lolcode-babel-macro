@@ -11,6 +11,7 @@ class JSify {
 
     Body = node => {
         node.lines = node.lines.map(node => this.compile(node));
+        node.lines.unshift(`let IT;`);
         return node.lines.join("\n");
     };
 
@@ -47,7 +48,18 @@ class JSify {
     };
 
     If = node => {
-        return `if (${name.condition}) {
+        let cond = node.condition;
+
+        // MEBBEs have conditions
+        // otherwise use implicit IT
+        // implementation quirk: previous expression val must be assigned to IT
+        if (cond) {
+            cond = this.compile(node.condition);
+        } else {
+            cond = "IT";
+        }
+
+        return `if (${cond}) {
             ${this.compile(node.body)}
         }else{
             ${this.compile(node.elseBody)}

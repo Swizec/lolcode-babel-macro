@@ -130,7 +130,8 @@ pluginTester({
                 import { lolcode } from '../macro';
                 const code = lolcode\`
                     HAI
-                    WIN, O RLY?
+                    IT R BOTH SAEM 1 AN 2 
+                    O RLY?
                         YA RLY
                             VISIBLE WIN
                         NO WAI
