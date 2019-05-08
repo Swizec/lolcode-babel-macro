@@ -59,11 +59,23 @@ class JSify {
             cond = "IT";
         }
 
-        return `if (${cond}) {
+        let code = `if (${cond}) {
             ${this.compile(node.body)}
-        }else{
-            ${this.compile(node.elseBody)}
         }`;
+
+        if (node.elseIfs) {
+            code += node.elseIfs
+                .map(node => `else ${this.compile(node)}`)
+                .join("\n");
+        }
+
+        if (node.elseBody) {
+            code += `else {
+                ${this.compile(node.elseBody)}
+            }`;
+        }
+
+        return code;
     };
 
     Visible = node => {

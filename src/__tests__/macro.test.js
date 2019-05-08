@@ -141,6 +141,25 @@ pluginTester({
                 \`;
             `
         },
+        elseif: {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    IT R BOTH SAEM 1 AN 2 
+                    O RLY?
+                        YA RLY
+                            VISIBLE WIN
+                        MEBBE BOTH SAEM IT AN false
+                            VISIBLE "MEBBE"
+                        NO WAI
+                            VISIBLE FAIL
+                    OIC
+                    KTHXBYE
+                \`;
+            `
+        },
         indexer: {
             error: false,
             code: `
