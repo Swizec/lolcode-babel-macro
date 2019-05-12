@@ -214,22 +214,7 @@ pluginTester({
                 \`;
             `
         },
-        // break: {
-        //     error: false,
-        //     code: `
-        //         import { lolcode } from '../macro';
-        //         const code = lolcode\`
-        //             HAI
-        //             HOW DUZ I IZYELLOW
-        //                 I HAS A val ITS true
-        //                 IT R val
-        //                 GTFO
-        //             IF U SAY SO
-        //             KTHXBYE
-        //         \`;
-        //     `
-        // },
-        switch: {
+        "switch with break": {
             error: false,
             code: `
                 import { lolcode } from '../macro';

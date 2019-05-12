@@ -1,25 +1,28 @@
 const stdlib = require("./lolstdlib");
 
 class JSify {
-    Assignment = node => {
+    Assignment = (node, newIT) => {
         return `${node.name} = ${this.compile(node.value)}`;
     };
 
-    ArgList = node => {
+    ArgList = (node, newIT) => {
         return node.values.map(this.compile).join(", ");
     };
 
-    Body = node => {
+    Body = (node, newIT) => {
         node.lines = node.lines.map(node => this.compile(node));
-        node.lines.unshift(`let IT;`);
+        if (newIT) {
+            node.lines.unshift(`let IT;`);
+        }
+
         return node.lines.join("\n");
     };
 
-    Break = node => {
+    Break = (node, newIT) => {
         return "break;";
     };
 
-    Declaration = node => {
+    Declaration = (node, newIT) => {
         let value = "null";
 
         if (node.value !== null) {
@@ -29,7 +32,7 @@ class JSify {
         return `let ${node.name} = ${value};`;
     };
 
-    FunctionCall = node => {
+    FunctionCall = (node, newIT) => {
         if (stdlib[node.name]) {
             return `lolcode.stdlib["${node.name}"](${this.compile(node.args)})`;
         } else {
@@ -37,22 +40,22 @@ class JSify {
         }
     };
 
-    FunctionDefinition = node => {
+    FunctionDefinition = (node, newIT) => {
         return `function ${node.name}(${node.args.join(", ").toLowerCase()}) {
             ${this.compile(node.body)}
             return IT;
         }`;
     };
 
-    Return = node => {
+    Return = (node, newIT) => {
         return `return ${this.compile(node.expression)}`;
     };
 
-    Identifier = node => {
+    Identifier = (node, newIT) => {
         return node.name.toLowerCase();
     };
 
-    If = node => {
+    If = (node, newIT) => {
         let cond = node.condition;
 
         // MEBBEs have conditions
@@ -83,15 +86,15 @@ class JSify {
         return code;
     };
 
-    Gimmeh = node => {
+    Gimmeh = (node, newIT) => {
         return `${node.variable} = window.prompt()`;
     };
 
-    Visible = node => {
+    Visible = (node, newIT) => {
         return `console.log(${this.compile(node.expression)})`;
     };
 
-    Literal = node => {
+    Literal = (node, newIT) => {
         if (typeof node.value === "string") {
             return `"${node.value}"`;
         } else {
@@ -99,7 +102,7 @@ class JSify {
         }
     };
 
-    Loop = node => {
+    Loop = (node, newIT) => {
         const cond = this.compile(node.condition);
         const op = node.op;
         const body = this.compile(node.body);
@@ -110,7 +113,7 @@ class JSify {
         };`;
     };
 
-    LoopCondition = node => {
+    LoopCondition = (node, newIT) => {
         if (!node) {
             return "true";
         } else {
@@ -119,11 +122,11 @@ class JSify {
         }
     };
 
-    NoOp = node => {
+    NoOp = (node, newIT) => {
         return "() => {}";
     };
 
-    Switch = node => {
+    Switch = (node, newIT) => {
         // LOLCODE switches operate on implicit IT variable
         // implementation quirk:
         // you have to explicitly assign to IT on previous line
@@ -133,21 +136,21 @@ class JSify {
         };`;
     };
 
-    Case = node => {
+    Case = (node, newIT) => {
         return `case ${this.compile(node.condition)}:
-            ${this.compile(node.body)}
+            ${this.compile(node.body, false)}
         `;
     };
 
-    CaseDefault = node => {
+    CaseDefault = (node, newIT) => {
         return `default:
-            ${this.compile(node.body)}
+            ${this.compile(node.body, false)}
         `;
     };
 
-    compile = node => {
+    compile = (node, newIT = true) => {
         if (this[node._name]) {
-            node = this[node._name](node);
+            node = this[node._name](node, newIT);
         } else {
             throw new Error(`Not implemented: ${node._name}`);
         }
