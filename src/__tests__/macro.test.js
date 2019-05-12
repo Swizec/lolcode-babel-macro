@@ -214,13 +214,38 @@ pluginTester({
                 \`;
             `
         },
+        // break: {
+        //     error: false,
+        //     code: `
+        //         import { lolcode } from '../macro';
+        //         const code = lolcode\`
+        //             HAI
+        //             HOW DUZ I IZYELLOW
+        //                 I HAS A val ITS true
+        //                 IT R val
+        //                 GTFO
+        //             IF U SAY SO
+        //             KTHXBYE
+        //         \`;
+        //     `
+        // },
         switch: {
             error: false,
             code: `
                 import { lolcode } from '../macro';
                 const code = lolcode\`
                     HAI
-                    
+                    IT R BOTH SAEM "lolcode" AN "lolcat"
+                    WTF?
+                        OMG true
+                            VISIBLE "is true"
+                            GTFO
+                        OMG false
+                            VISIBLE "nah"
+                            GTFO
+                        OMGWTF
+                            VISIBLE "trinary?"
+                    OIC
                     KTHXBYE
                 \`;
             `

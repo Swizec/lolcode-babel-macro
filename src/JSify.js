@@ -15,6 +15,10 @@ class JSify {
         return node.lines.join("\n");
     };
 
+    Break = node => {
+        return "break;";
+    };
+
     Declaration = node => {
         let value = "null";
 
@@ -117,6 +121,28 @@ class JSify {
 
     NoOp = node => {
         return "() => {}";
+    };
+
+    Switch = node => {
+        // LOLCODE switches operate on implicit IT variable
+        // implementation quirk:
+        // you have to explicitly assign to IT on previous line
+
+        return `switch(IT) {
+            ${node.branches.map(this.compile).join("\n")}
+        };`;
+    };
+
+    Case = node => {
+        return `case ${this.compile(node.condition)}:
+            ${this.compile(node.body)}
+        `;
+    };
+
+    CaseDefault = node => {
+        return `default:
+            ${this.compile(node.body)}
+        `;
     };
 
     compile = node => {
