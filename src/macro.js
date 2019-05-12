@@ -4,7 +4,7 @@ const JSify = require("./JSify");
 const lolstdlib = require("./lolstdlib");
 
 module.exports = createMacro(myMacro);
-module.exports.lolstdlib = lolstdlib;
+module.exports.stdlib = lolstdlib;
 
 function myMacro({ references, state, babel }) {
     references.lolcode.forEach(referencePath => {

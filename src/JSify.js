@@ -27,7 +27,7 @@ class JSify {
 
     FunctionCall = node => {
         if (stdlib[node.name]) {
-            return `lolstdlib["${node.name}"](${this.compile(node.args)})`;
+            return `lolcode.stdlib["${node.name}"](${this.compile(node.args)})`;
         } else {
             return `${node.name}(${this.compile(node.args)})`;
         }
@@ -112,6 +112,10 @@ class JSify {
             const expr = this.compile(node.expression);
             return node.check === "while" ? expr : `!${expr}`;
         }
+    };
+
+    NoOp = node => {
+        return "() => {}";
     };
 
     compile = node => {

@@ -175,24 +175,13 @@ pluginTester({
                 \`;
             `
         },
-        loopcondition: {
-            error: false,
-            code: `
-                import { lolcode } from '../macro';
-                const code = lolcode\`
-                    HAI
-                    
-                    KTHXBYE
-                \`;
-            `
-        },
         noop: {
             error: false,
             code: `
                 import { lolcode } from '../macro';
                 const code = lolcode\`
                     HAI
-                    
+                    O NVM
                     KTHXBYE
                 \`;
             `
