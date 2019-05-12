@@ -36,6 +36,7 @@ class JSify {
     FunctionDefinition = node => {
         return `function ${node.name}(${node.args.join(", ").toLowerCase()}) {
             ${this.compile(node.body)}
+            return IT;
         }`;
     };
 

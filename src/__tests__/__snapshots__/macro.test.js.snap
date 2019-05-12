@@ -1,11 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`macros noop: noop 1`] = `
+exports[`macros implicit return: implicit return 1`] = `
 "
 import { lolcode } from '../macro';
 const code = lolcode\`
     HAI
-    O NVM
+    HOW DUZ I IZYELLOW
+        I HAS A val ITS true
+        IT R val
+    IF U SAY SO
     KTHXBYE
 \`;
 
@@ -14,7 +17,12 @@ const code = lolcode\`
 const code = function() {
   let IT;
 
-  () => {};
+  function IZYELLOW() {
+    let IT;
+    let val = true;
+    IT = val;
+    return IT;
+  }
 };
 
 "

@@ -106,7 +106,7 @@ pluginTester({
                 import { lolcode } from '../macro';
                 const code = lolcode\`
                     HAI
-                     HOW DUZ I IZYELLOW
+                    HOW DUZ I IZYELLOW
                         VISIBLE "yellow"
                     IF U SAY SO
                     KTHXBYE
@@ -192,7 +192,24 @@ pluginTester({
                 import { lolcode } from '../macro';
                 const code = lolcode\`
                     HAI
-                    
+                    HOW DUZ I IZYELLOW
+                        I HAS A val ITS true
+                        FOUND YR val
+                    IF U SAY SO
+                    KTHXBYE
+                \`;
+            `
+        },
+        "implicit return": {
+            error: false,
+            code: `
+                import { lolcode } from '../macro';
+                const code = lolcode\`
+                    HAI
+                    HOW DUZ I IZYELLOW
+                        I HAS A val ITS true
+                        IT R val
+                    IF U SAY SO
                     KTHXBYE
                 \`;
             `
