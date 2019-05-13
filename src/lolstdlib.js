@@ -1,7 +1,7 @@
 /**
  * LOLCODE built in functions.
  */
-export default {
+const stdlib = {
     NOT: function(a) {
         return !a;
     },
@@ -68,3 +68,5 @@ export default {
         return String.fromCharCode(a);
     }
 };
+
+export default stdlib;

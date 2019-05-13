@@ -1,4 +1,4 @@
-const stdlib = require("./lolstdlib");
+import stdlib from "./lolstdlib";
 
 class JSify {
     Assignment = (node, newIT) => {
