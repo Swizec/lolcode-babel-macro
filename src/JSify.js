@@ -108,7 +108,7 @@ class JSify {
         const body = this.compile(node.body);
 
         const incordec = op.command == "inc" ? "++" : "--";
-        return `for (; ${cond}; _${op.symbol}${incordec}) {
+        return `for (; ${cond}; ${op.symbol}${incordec}) {
             ${body};
         };`;
     };
