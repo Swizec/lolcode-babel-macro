@@ -1,1 +1,3 @@
-export * from './macro'
+import * as macro from './macro';
+
+export default macro.default;
