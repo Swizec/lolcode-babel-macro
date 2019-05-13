@@ -1,6 +1,6 @@
 {
     "name": "lolcode.macro",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "description": "LOLCODE implementation with babel macros",
     "main": "dist/lolcode.macro.js",
     "source": "src/index.js",
