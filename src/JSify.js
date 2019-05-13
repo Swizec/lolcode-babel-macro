@@ -34,7 +34,7 @@ class JSify {
 
     FunctionCall = (node, newIT) => {
         if (stdlib[node.name]) {
-            return `lolcode.stdlib["${node.name}"](${this.compile(node.args)})`;
+            return `stdlib["${node.name}"](${this.compile(node.args)})`;
         } else {
             return `${node.name}(${this.compile(node.args)})`;
         }

@@ -4,10 +4,7 @@ import { parser } from "@swizec/loljs";
 import JSify from "./JSify";
 import stdlib from "./lolstdlib";
 
-const macro = createMacro(myMacro);
-macro.stdlib = stdlib;
-
-export default macro;
+export default createMacro(myMacro);
 
 function myMacro({ references, state, babel }) {
     references.lolcode.forEach(referencePath => {
@@ -25,7 +22,7 @@ function compileLolcode(referencePath) {
     const ast = parser.parse(source);
     const jsify = new JSify();
 
-    return `function () {
+    return `(function (stdlib) {
        ${jsify.compile(ast)} 
-    }`;
+    })(${stdlib})`;
 }
