@@ -26,5 +26,5 @@ function compileLolcode(referencePath) {
         return function() {
             ${jsify.compile(ast)} 
         }
-    })(${stdlib})`;
+    })(lolstdlib)`;
 }
