@@ -23,6 +23,8 @@ function compileLolcode(referencePath) {
     const jsify = new JSify();
 
     return `(function (stdlib) {
-       ${jsify.compile(ast)} 
+        return function() {
+            ${jsify.compile(ast)} 
+        }
     })(${stdlib})`;
 }
