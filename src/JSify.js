@@ -159,4 +159,4 @@ class JSify {
     };
 }
 
-module.exports = JSify;
+export default JSify;

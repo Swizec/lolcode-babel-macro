@@ -1,10 +1,13 @@
-const { createMacro } = require("babel-plugin-macros");
-const { parser } = require("@swizec/loljs");
-const JSify = require("./JSify");
-const lolstdlib = require("./lolstdlib");
+import { createMacro } from "babel-plugin-macros";
+import { parser } from "@swizec/loljs";
 
-module.exports = createMacro(myMacro);
-module.exports.stdlib = lolstdlib;
+import JSify from "./JSify";
+import lolstdlib from "./lolstdlib";
+
+const macro = createMacro(myMacro);
+macro.stdlib = lolstdlib;
+
+export default macro;
 
 function myMacro({ references, state, babel }) {
     references.lolcode.forEach(referencePath => {

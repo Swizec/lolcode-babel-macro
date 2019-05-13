@@ -3,12 +3,12 @@
     "version": "1.0.0",
     "description": "LOLCODE implementation with babel macros",
     "main": "dist/lolcode-babel-macro.js",
-    "src": "src/index.js",
+    "source": "src/index.js",
     "files": [
         "dist/"
     ],
     "scripts": {
-        "test": "jest --coverage --verbose=true --silent=false",
+        "test": "npm run build && jest --coverage --verbose=true --silent=false",
         "format": "prettier --write",
         "prepare": "npm run build",
         "build": "microbundle -i src/index.js -o dist"

@@ -1,7 +1,7 @@
 /**
  * LOLCODE built in functions.
  */
-module.exports = {
+export default {
     NOT: function(a) {
         return !a;
     },

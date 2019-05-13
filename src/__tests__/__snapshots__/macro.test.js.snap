@@ -2,7 +2,7 @@
 
 exports[`macros assignment: assignment 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     I HAS A VAR
@@ -12,18 +12,20 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  let VAR = null;
-  VAR = 3;
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    I HAS A VAR
+    VAR R 3
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros builtins: builtins 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
         I HAS A thing ITS 10
@@ -36,21 +38,23 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  let thing = 10;
-  let aval = true;
-  let bval = false;
-  thing = lolcode.stdlib[\\"NOT\\"](10);
-  thing = lolcode.stdlib[\\"BOTH SAEM\\"](aval, bval);
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+        I HAS A thing ITS 10
+        I HAS A aval ITS true
+        I HAS A bval ITS false
+        thing R NOT 10
+        thing R BOTH SAEM aval AN bval
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros declaration with value: declaration with value 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     I HAS A VAR ITS 10
@@ -59,17 +63,19 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  let VAR = 10;
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    I HAS A VAR ITS 10
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros declaration: declaration 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     I HAS A VAR
@@ -78,17 +84,19 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  let VAR = null;
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    I HAS A VAR
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros elseif: elseif 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     IT R BOTH SAEM 1 AN 2 
@@ -105,28 +113,27 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  IT = lolcode.stdlib[\\"BOTH SAEM\\"](1, 2);
-
-  if (IT) {
-    let IT;
-    console.log(true);
-  } else if (lolcode.stdlib[\\"BOTH SAEM\\"](it, false)) {
-    let IT;
-    console.log(\\"MEBBE\\");
-  } else {
-    let IT;
-    console.log(false);
-  }
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    IT R BOTH SAEM 1 AN 2 
+    O RLY?
+        YA RLY
+            VISIBLE WIN
+        MEBBE BOTH SAEM IT AN false
+            VISIBLE \\"MEBBE\\"
+        NO WAI
+            VISIBLE FAIL
+    OIC
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros functioncall: functioncall 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     HOW DUZ I IZCOLOR YR COLOR
@@ -138,24 +145,22 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-
-  function IZCOLOR(color) {
-    let IT;
-    console.log(color);
-    return IT;
-  }
-
-  IZCOLOR(\\"yellow\\");
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    HOW DUZ I IZCOLOR YR COLOR
+        VISIBLE COLOR
+    IF U SAY SO
+    IZCOLOR \\"yellow\\" MKAY
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros functiondefinition with args: functiondefinition with args 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     HOW DUZ I IZCOLOR YR COLOR
@@ -166,22 +171,21 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-
-  function IZCOLOR(color) {
-    let IT;
-    console.log(color);
-    return IT;
-  }
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    HOW DUZ I IZCOLOR YR COLOR
+        VISIBLE color
+    IF U SAY SO
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros functiondefinition with return: functiondefinition with return 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     HOW DUZ I IZCOLOR YR COLOR
@@ -192,22 +196,21 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-
-  function IZCOLOR(color) {
-    let IT;
-    return color;
-    return IT;
-  }
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    HOW DUZ I IZCOLOR YR COLOR
+        FOUND YR color
+    IF U SAY SO
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros functiondefinition: functiondefinition 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     HOW DUZ I IZYELLOW
@@ -218,22 +221,21 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-
-  function IZYELLOW() {
-    let IT;
-    console.log(\\"yellow\\");
-    return IT;
-  }
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    HOW DUZ I IZYELLOW
+        VISIBLE \\"yellow\\"
+    IF U SAY SO
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros gimmeh: gimmeh 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     I HAS A val
@@ -243,18 +245,20 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  let val = null;
-  val = window.prompt();
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    I HAS A val
+    GIMMEH val
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros hello world: hello world 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     VISIBLE \\"HAI WORLD!\\"
@@ -263,17 +267,19 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  console.log(\\"HAI WORLD!\\");
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    VISIBLE \\"HAI WORLD!\\"
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros if: if 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     IT R BOTH SAEM 1 AN 2 
@@ -288,25 +294,25 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  IT = lolcode.stdlib[\\"BOTH SAEM\\"](1, 2);
-
-  if (IT) {
-    let IT;
-    console.log(true);
-  } else {
-    let IT;
-    console.log(false);
-  }
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    IT R BOTH SAEM 1 AN 2 
+    O RLY?
+        YA RLY
+            VISIBLE WIN
+        NO WAI
+            VISIBLE FAIL
+    OIC
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros implicit return: implicit return 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     HOW DUZ I IZYELLOW
@@ -318,23 +324,22 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-
-  function IZYELLOW() {
-    let IT;
-    let val = true;
-    IT = val;
-    return IT;
-  }
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    HOW DUZ I IZYELLOW
+        I HAS A val ITS true
+        IT R val
+    IF U SAY SO
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros loop: loop 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     I HAS A i ITS 0
@@ -346,22 +351,22 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  let i = 0;
-
-  for (; !lolcode.stdlib[\\"BOTH SAEM\\"](i, 10); _i++) {
-    let IT;
-    console.log(lolcode.stdlib[\\"SUM OF\\"](i, 1));
-  }
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    I HAS A i ITS 0
+    IM IN YR loopy UPPIN YR i TIL BOTH SAEM i AN 10
+        VISIBLE SUM OF i AN 1
+    IM OUTTA YR loopy
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros noop: noop 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     O NVM
@@ -370,18 +375,19 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-
-  () => {};
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    O NVM
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros return: return 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     HOW DUZ I IZYELLOW
@@ -393,23 +399,22 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-
-  function IZYELLOW() {
-    let IT;
-    let val = true;
-    return val;
-    return IT;
-  }
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    HOW DUZ I IZYELLOW
+        I HAS A val ITS true
+        FOUND YR val
+    IF U SAY SO
+    KTHXBYE
+\`;
 
 "
 `;
 
 exports[`macros switch with break: switch with break 1`] = `
 "
-import { lolcode } from '../macro';
+import { lolcode } from '../../dist/lolcode-babel-macro';
 const code = lolcode\`
     HAI
     IT R BOTH SAEM \\"lolcode\\" AN \\"lolcat\\"
@@ -428,23 +433,22 @@ const code = lolcode\`
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const code = function() {
-  let IT;
-  IT = lolcode.stdlib[\\"BOTH SAEM\\"](\\"lolcode\\", \\"lolcat\\");
-
-  switch (IT) {
-    case true:
-      console.log(\\"is true\\");
-      break;
-
-    case false:
-      console.log(\\"nah\\");
-      break;
-
-    default:
-      console.log(\\"trinary?\\");
-  }
-};
+import { lolcode } from \\"../../dist/lolcode-babel-macro\\";
+const code = lolcode\`
+    HAI
+    IT R BOTH SAEM \\"lolcode\\" AN \\"lolcat\\"
+    WTF?
+        OMG true
+            VISIBLE \\"is true\\"
+            GTFO
+        OMG false
+            VISIBLE \\"nah\\"
+            GTFO
+        OMGWTF
+            VISIBLE \\"trinary?\\"
+    OIC
+    KTHXBYE
+\`;
 
 "
 `;

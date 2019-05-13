@@ -18,7 +18,7 @@ pluginTester({
         "hello world": {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     VISIBLE "HAI WORLD!"
@@ -29,7 +29,7 @@ pluginTester({
         assignment: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     I HAS A VAR
@@ -41,7 +41,7 @@ pluginTester({
         declaration: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     I HAS A VAR
@@ -52,7 +52,7 @@ pluginTester({
         "declaration with value": {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     I HAS A VAR ITS 10
@@ -63,7 +63,7 @@ pluginTester({
         functioncall: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     HOW DUZ I IZCOLOR YR COLOR
@@ -77,7 +77,7 @@ pluginTester({
         "functiondefinition with args": {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     HOW DUZ I IZCOLOR YR COLOR
@@ -90,7 +90,7 @@ pluginTester({
         "functiondefinition with return": {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     HOW DUZ I IZCOLOR YR COLOR
@@ -103,7 +103,7 @@ pluginTester({
         functiondefinition: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     HOW DUZ I IZYELLOW
@@ -116,7 +116,7 @@ pluginTester({
         gimmeh: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     I HAS A val
@@ -128,7 +128,7 @@ pluginTester({
         if: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     IT R BOTH SAEM 1 AN 2 
@@ -145,7 +145,7 @@ pluginTester({
         elseif: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     IT R BOTH SAEM 1 AN 2 
@@ -164,7 +164,7 @@ pluginTester({
         loop: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     I HAS A i ITS 0
@@ -178,7 +178,7 @@ pluginTester({
         noop: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     O NVM
@@ -189,7 +189,7 @@ pluginTester({
         return: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     HOW DUZ I IZYELLOW
@@ -203,7 +203,7 @@ pluginTester({
         "implicit return": {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     HOW DUZ I IZYELLOW
@@ -217,7 +217,7 @@ pluginTester({
         "switch with break": {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                     IT R BOTH SAEM "lolcode" AN "lolcat"
@@ -238,7 +238,7 @@ pluginTester({
         builtins: {
             error: false,
             code: `
-                import { lolcode } from '../macro';
+                import { lolcode } from '../../dist/lolcode-babel-macro';
                 const code = lolcode\`
                     HAI
                         I HAS A thing ITS 10
