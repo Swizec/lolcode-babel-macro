@@ -2,7 +2,6 @@ import { createMacro } from "babel-plugin-macros";
 import { parser } from "@swizec/loljs";
 
 import JSify from "./JSify";
-import stdlib from "./lolstdlib";
 
 export default createMacro(myMacro);
 

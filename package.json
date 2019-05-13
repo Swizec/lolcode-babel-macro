@@ -11,7 +11,7 @@
         "test": "npm run build && jest --coverage --verbose=true --silent=false",
         "format": "prettier --write",
         "prepare": "npm run build",
-        "build": "microbundle -i src/index.js -o dist"
+        "build": "microbundle -i src/index.js -o dist && microbundle -i src/lolstdlib.js -o dist/lolstdlib.js"
     },
     "repository": {
         "type": "git",
