@@ -4,11 +4,10 @@ A fully functioning LOLCODE-to-JavaScript compiler implemented as a Babel macro.
 
 Let me start by proving that this crazy contraption works 👇
 
-<a href="https://codesandbox.io/s/github/Swizec/lolcode.macro-example" target="_blank" rel="noopener noreferrer"><img style="max-width: 480px;" src="https://s3.amazonaws.com/techletter.app/screenshot-1558022421993.png" alt="Click through for source" scale="0"></a>
+https://codesandbox.io/s/github/Swizec/lolcode.macro-example
 
 Here you have a CodeSandbox with the legendary FizzBuzz implemented in LOLCODE. A Babel macro compiles it to a JavaScript function at build-time and you use it as any ole JavaScript at runtime.
 
-LOLCODE goes in 🐱
 LOLCODE goes in 🐱
 
 ```lolcode
@@ -101,4 +100,8 @@ KTHXBYE
 
 fizzbuzz();
 ```
+Details best grokked from [this CodeSandbox](https://codesandbox.io/s/github/Swizec/lolcode.macro-example)
 
+## Wanna know more?
+
+Here is a full blog post about how it works 👉 [LOLCODE-to-JavaScript compiler babel macro](https://swizec.com/blog/lolcode-to-javascript-compiler-babel-macro/swizec/9083)
